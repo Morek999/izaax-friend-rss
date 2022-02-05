@@ -1,11 +1,3 @@
-# [Background Tasks in Python with RQ] https://devcenter.heroku.com/articles/python-rq
-# [Worker Dynos, Background Jobs and Queueing] https://devcenter.heroku.com/articles/background-jobs-queueing
-# [Google Sheets API v4 - Python Quickstart] https://developers.google.com/sheets/api/quickstart/python
-# [Google Shhets API v4 - Updating Spreadsheets] https://developers.google.com/sheets/api/guides/batchupdate
-# [Reading & Writing Cell Values] https://developers.google.com/sheets/api/guides/values
-# [Method: spreadsheets.values.append] https://developers.google.com/sheets/api/guides/values#appending_values
-# https://developers.google.com/sheets/api/samples/writing#append_values
-
 import os
 import requests
 from flask import Flask, render_template
@@ -14,7 +6,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/feed")
 def index():
     # Load current RSS
     wp_login = 'http://www.izaax.net/blog/wp-login.php'
