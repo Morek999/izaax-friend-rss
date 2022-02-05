@@ -6,10 +6,9 @@
 # [Method: spreadsheets.values.append] https://developers.google.com/sheets/api/guides/values#appending_values
 # https://developers.google.com/sheets/api/samples/writing#append_values
 
-
+import os
 import requests
 from flask import Flask, render_template
-import os
 
 
 app = Flask(__name__)
@@ -34,7 +33,7 @@ def index():
         content = resp.text
 
     # Render HTML with count variable
-    return render_template("index.html", feed=content)
+    return render_template("index.html", content=content)
 
 
 # Run the app	
