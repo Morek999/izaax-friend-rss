@@ -10,9 +10,6 @@
 import requests
 from flask import Flask, render_template
 import os
-import sys
-import threading
-import time
 
 
 app = Flask(__name__)
