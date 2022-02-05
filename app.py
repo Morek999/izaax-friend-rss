@@ -37,7 +37,7 @@ def index():
 def feed():
     content = fetch_rss()
     # Render HTML with count variable
-    return render_template("feed.xml", content=content)
+    return render_template("feed.txt", content=content)
 
 
 # Run the app	
