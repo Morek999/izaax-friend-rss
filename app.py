@@ -6,8 +6,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
-@app.route("/feed")
-def index():
+def fetch_rss():
     # Load current RSS
     wp_login = 'http://www.izaax.net/blog/wp-login.php'
     rss_feed = 'http://www.izaax.net/blog/?feed=rss2'
@@ -24,11 +23,23 @@ def index():
         resp = s.get(rss_feed)
         content = resp.text
 
+    return content
+
+
+@app.route("/")
+def index():
+    content = fetch_rss()
     # Render HTML with count variable
     return render_template("index.html", content=content)
 
 
+@app.route("/feed")
+def feed():
+    content = fetch_rss()
+    # Render HTML with count variable
+    return render_template("feed.txt", content=content)
+
+
 # Run the app	
-	
 if __name__ == '__main__':
 	app.run()
